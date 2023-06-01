@@ -53,7 +53,7 @@ function App() {
           console.error(err);
         });
     }
-  }, []);
+  }, [isLoggedIn]);
 
   useEffect(() => {
     function closeByEscape(evt) {
@@ -87,7 +87,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (isLoggedIn === true) {
+    if (isLoggedIn) {
       navigate("/", { replace: true });
     }
   }, [isLoggedIn, navigate]);
